@@ -1,0 +1,14 @@
+{
+  "name": "female-focus-learn",
+  "version": "1.0.0",
+  "description": "This project is going to help in creating transformational education by encouraging students to learn through online and not just to intake a bunch of information online but can also ask questions to the course creator inorder help them understand more about what they are trying to learn.",
+  "main": "script.js",
+  "scripts": {
+  "dev": "node script.js",
+  "start": "node script.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

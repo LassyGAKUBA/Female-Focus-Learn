@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #E4E9F4;
+    }
+    .login-container {
+      width: 400px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      text-align: center;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #405694;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .error-message {
+      color: red;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="error-message" id="errorMessage">Invalid credentials, please try again.</div>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button id="loginButton">Login</button>
+
+    <br><br>
+    <p>Don't have an account? <a href="Reg.html">Register</a></p>
+  </div>
+
+  <script>
+    document.getElementById('loginButton').addEventListener('click', function() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      // Clear previous errors
+      errorMessage.style.display = 'none';
+
+      // Get stored users from localStorage
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+
+      // Find matching user
+      let user = users.find(user => user.email === email && user.password === password);
+
+      if (user) {
+        // Store session token
+        localStorage.setItem('sessionToken', email);
+        alert('Login successful!');
+        window.location.href = 'dash.html'; // Redirect to dashboard
+      } else {
+        // Show error message
+        errorMessage.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
