@@ -19,5 +19,5 @@ Skill Development: Covers fundamental web development, design, and deployment to
 Target Audience
 This platform is built for women looking to develop technical skills in web development and digital design, whether they are beginners or looking to enhance their knowledge.
 
-Link to site: female-focus-learn.vercel.app
+Link to site: https://female-focus-learn.vercel.app/
 
